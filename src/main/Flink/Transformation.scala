@@ -50,6 +50,7 @@ object Transformation {
     //    val streamUnion: DataStream[String] = stream1.union(stream2)
     //    streamUnion.print()
 
+
     //KeyBy
     // Reduce
     //    val stream: DataStream[(String, Int)] = env.readTextFile("in/1.txt").flatMap(_.split(" ")).map((_, 1))
@@ -59,7 +60,15 @@ object Transformation {
     //    )
     //    streamReduce.print()
 
+    //Fold：折叠，合并当前元素和前一次折叠操作的结果
+    //    val stream=env.readTextFile("in/1.txt").flatMap(_.split(" ")).map((_,1)).keyBy(0)
+    //    val streamFold=stream.fold(100)((begin,item)=>(begin+item._2))
+    //    streamFold.print()
+    //Aggregations：聚合 sum、sumBy、min、minBy、max、maxBy
+    //    val stream = env.readTextFile("in/1.txt").flatMap(_.split(" ")).map((_, 1)).keyBy(0)
+    //    val streamReduce=stream.sum(1)
+    //    streamReduce.print()
 
-    env.execute("testJob")
+    env.execute("TransformationJob")
   }
 }

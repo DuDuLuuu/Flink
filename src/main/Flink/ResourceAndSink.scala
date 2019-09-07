@@ -31,7 +31,7 @@ object ResourceAndSink {
     //    4、writeUsingOutputFormat
     //    5、writetoSocket
     //执行任务
-    env.execute("testJob")
+    env.execute("ResourceAndSinkJob")
 
   }
 }
